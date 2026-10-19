@@ -1,6 +1,6 @@
 import { createRoot } from 'react-dom/client';
 import { BrowserRouter, MemoryRouter, Route, Routes } from 'react-router-dom';
-import { MobileBar, Nav } from './components/Chrome.jsx';
+import { Nav } from './components/Chrome.jsx';
 import Assistant from './components/Assistant.jsx';
 import Home from './pages/Home.jsx';
 import Legal from './pages/Legal.jsx';
@@ -22,7 +22,6 @@ function App() {
         <Route path="/terms" element={<Legal page="terms" />} />
         <Route path="*" element={<Home />} />
       </Routes>
-      <MobileBar />
       <Assistant />
     </Router>
   );

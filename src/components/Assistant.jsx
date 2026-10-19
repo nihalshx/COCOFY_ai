@@ -36,7 +36,11 @@ export default function Assistant() {
   const [inHero, setInHero] = useState(true);
   const small = typeof window !== 'undefined' && matchMedia('(max-width: 899px)').matches;
   useEffect(() => {
-    const on = () => setInHero(pathname === '/' && window.scrollY < window.innerHeight * 0.6);
+    const on = () => {
+      const c = document.getElementById('climb'); const r = c && c.getBoundingClientRect();
+      const inClimb = !!r && r.top < innerHeight * 0.5 && r.bottom > innerHeight * 0.5;
+      setInHero(pathname === '/' && (window.scrollY < window.innerHeight * 0.6 || inClimb));
+    };
     on(); addEventListener('scroll', on, { passive: true });
     return () => removeEventListener('scroll', on);
   }, [pathname]);

@@ -969,6 +969,28 @@ section[id],footer[id]{scroll-margin-top:72px}
 .coco-ping{top:4px;right:8px}
 @media (max-width:899px){ .coco-launcher{width:70px;height:70px} .coco-x{inset:9px} }
 @media (orientation:landscape) and (max-height:540px){ .coco-launcher{width:62px;height:62px} }
+
+/* phones: no bottom contact bar any more; Coco sits in the corner and the header keeps the WhatsApp button */
+@media (max-width:899px){
+  body{padding-bottom:0}
+  .mbar{display:none}
+  .coco-launcher{bottom:calc(14px + env(safe-area-inset-bottom,0px))}
+  .coco-bubble{bottom:calc(84px + env(safe-area-inset-bottom,0px))}
+}
+@media (min-width:641px) and (max-width:899px){
+  .coco-panel{bottom:calc(96px + env(safe-area-inset-bottom,0px))}
+}
+
+
+/* phones: Coco's chat is a full-width sheet attached to the bottom edge */
+@media (max-width:640px){
+  .coco-panel{left:0;right:0;bottom:0;width:100%;height:min(88dvh,720px);border-radius:24px 24px 0 0;border-bottom:0;padding-bottom:env(safe-area-inset-bottom,0px)}
+}
+
+
+
+
+
 @media (prefers-reduced-motion:reduce){ .coco2 *{animation:none!important} }
 
 @media (prefers-reduced-motion:reduce){
