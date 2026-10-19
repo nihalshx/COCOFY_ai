@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://cocofy.in/sitemap.xml
